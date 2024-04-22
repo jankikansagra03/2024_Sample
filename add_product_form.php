@@ -1,6 +1,6 @@
 <?php
 
-include_once ("admin_header.php");
+include_once("admin_header.php");
 $q = "select * from categories";
 $result = mysqli_query($con, $q);
 ?>
@@ -17,20 +17,17 @@ $result = mysqli_query($con, $q);
                 </div>
                 <div class="form-group">
                     <label for="pdesc1">Product Description</label>
-                    <textarea class="form-control" id="pdesc1" placeholder="Enter Product Description" name="pdesc"
-                        rows="5"></textarea>
+                    <textarea class="form-control" id="pdesc1" placeholder="Enter Product Description" name="pdesc" rows="5"></textarea>
                     <span id="pdesc_err"></span>
                 </div>
                 <div class="form-group">
                     <label for="pprice1">Product Price:</label>
-                    <input type="number" class="form-control" id="pprice1" placeholder="Enter Product Price"
-                        name="pprice">
+                    <input type="number" class="form-control" id="pprice1" placeholder="Enter Product Price" name="pprice">
                     <span id="pprice_err"></span>
                 </div>
                 <div class="form-group">
                     <label for="pquantity1">Product Quantity:</label>
-                    <input type="number" class="form-control" id="pquantity1" placeholder="Enter Product Quantity"
-                        name="pquantity">
+                    <input type="number" class="form-control" id="pquantity1" placeholder="Enter Product Quantity" name="pquantity">
                     <span id="pquantity_err"></span>
                 </div>
                 <div class="form-group">
@@ -38,12 +35,14 @@ $result = mysqli_query($con, $q);
                     <select name="pcategory" id="pcategory1" class="form-control">
                         <?php
                         while ($row = mysqli_fetch_array($result)) {
-                            ?>
+                        ?>
                             <option value="<?= $row[0] ?>"><?= $row[1] ?></option>
-                            <?php
+                        <?php
                         }
+
                         ?>
                     </select>
+
                     <span id=" pcategory_err"></span>
                 </div>
                 <div class="form-group">
@@ -53,8 +52,7 @@ $result = mysqli_query($con, $q);
                 </div>
                 <div class="form-group">
                     <label for="p_extra1">Product Extra Images:</label>
-                    <input type="file" class="form-control" id="p_extra1" placeholder="Enter Event Title"
-                        name="p_extra[]" multiple>
+                    <input type="file" class="form-control" id="p_extra1" placeholder="Enter Event Title" name="p_extra[]" multiple>
                     <span id="p_extra_err"></span>
                 </div>
 
@@ -66,7 +64,7 @@ $result = mysqli_query($con, $q);
 </div>
 <br>
 <?php
-include_once ("footer.php");
+include_once("footer.php");
 ?>
 <?php
 
@@ -96,16 +94,16 @@ if (isset($_POST['btn'])) {
         move_uploaded_file($_FILES['p_main']['tmp_name'], "images/products/" . $main_image_name);
         $i = 0;
         for ($i = 0; $i < count($extra_images); $i++) {
-            move_uploaded_file($_FILES['p_extra']['tmp_name'][$key], "images/products" . $extra_images[$i]);
+            move_uploaded_file($_FILES['p_extra']['tmp_name'][$key], "images/products/" . $extra_images[$i]);
         }
         setcookie('success', 'Product Added Successfully', time() + 2, "/");
     } else {
         setcookie('error', 'Error in adding Product', time() + 2, "/");
     }
-    ?>
+?>
     <script>
         window.location.href = "manage_products.php";
     </script>
-    <?php
+<?php
 }
 ?>

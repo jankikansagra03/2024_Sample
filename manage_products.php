@@ -1,5 +1,5 @@
 <?php
-include_once ('admin_header.php');
+include_once('admin_header.php');
 $q = "select * from products";
 $result = mysqli_query($con, $q);
 ?>
@@ -30,57 +30,55 @@ $result = mysqli_query($con, $q);
                 <tbody>
                     <?php
                     while ($a = mysqli_fetch_array($result)) {
-                        ?>
-                    <tr>
-                        <td><?php echo $a[0]; ?></td>
-                        <td><?php echo $a[1]; ?></td>
-                        <td><?php echo $a[2]; ?></td>
-                        <td><?php echo $a[3]; ?></td>
-                        <td style="height:100px; width:200px"><img src="images/products/<?php echo $a[6]; ?>"
-                                class="img-fluid" /></td>
-                        <td>
-                            <a href="admin_edit_event.php?e_id=<?php echo $a[0]; ?>">
-                                <button class="btn btn-primary text-white" style="width:90%">
-                                    <i class="fa-solid fa-square-pen fa-lg" style="color: #ffffff;"></i> Edit
-                                </button>
-                            </a>
-                            <a href="admin_delete_event.php?e_id=<?php echo $a[0]; ?>">
-                                <button class="btn btn-danger text-white" style="width:90%"> <i
-                                        class="fa-solid fa-trash-can fa-lg" style="color:white;"></i> Delete
-                                </button>
-                            </a>
+                    ?>
+                        <tr>
+                            <td><?php echo $a[0]; ?></td>
+                            <td><?php echo $a[1]; ?></td>
+                            <td><?php echo $a[2]; ?></td>
+                            <td><?php echo $a[3]; ?></td>
+                            <td style="height:100px; width:200px"><img src="images/products/<?php echo $a[6]; ?>" class="img-fluid" /></td>
+                            <td>
+                                <a href="admin_edit_product.php?p_id=<?php echo $a[0]; ?>">
+                                    <button class="btn btn-primary text-white" style="width:90%">
+                                        <i class="fa-solid fa-square-pen fa-lg" style="color: #ffffff;"></i> Edit
+                                    </button>
+                                </a>
+                                <a href="admin_delete_product.php?p_id=<?php echo $a[0]; ?>">
+                                    <button class="btn btn-danger text-white" style="width:90%"> <i class="fa-solid fa-trash-can fa-lg" style="color:white;"></i> Delete
+                                    </button>
+                                </a>
 
-                            <a href="admin_view_event.php?e_id=<?php echo $a[0]; ?>">
-                                <button class="btn btn-info text-white" style="width:90%">
-                                    <i class="fa-solid fa-eye fa-lg" style="color:white"></i> View
-                                </button>
-                            </a>
+                                <a href="admin_view_product.php?p_id=<?php echo $a[0]; ?>">
+                                    <button class="btn btn-info text-white" style="width:90%">
+                                        <i class="fa-solid fa-eye fa-lg" style="color:white"></i> View
+                                    </button>
+                                </a>
 
-                            <?php
+                                <?php
                                 if ($a[8] == "Active") {
-                                    ?>
-                            <a href="admin_deactivate_event.php?e_id=<?php echo $a[0]; ?>">
+                                ?>
+                                    <a href="admin_deactivate_product.php?p_id=<?php echo $a[0]; ?>">
 
-                                <button class="btn btn-warning text-white" style="width:90%">
-                                    <i class="fa-solid fa-circle-xmark fa-lg" style="color:white"></i> Deactivate
-                                </button>
-                            </a>
-                            <?php
+                                        <button class="btn btn-warning text-white" style="width:90%">
+                                            <i class="fa-solid fa-circle-xmark fa-lg" style="color:white"></i> Deactivate
+                                        </button>
+                                    </a>
+                                <?php
                                 } else {
-                                    ?>
-                            <a href="admin_activate_event.php?e_id=<?php echo $a[0]; ?>">
+                                ?>
+                                    <a href="admin_activate_product.php?p_id=<?php echo $a[0]; ?>">
 
-                                <button class="btn btn-success text-white" style="width:90%">
-                                    <i class="fa-solid fa-square-check fa-lg" style="color: #ffffff;"></i>
-                                    &nbsp;Activate
-                                </button>
-                            </a>
-                            <?php
+                                        <button class="btn btn-success text-white" style="width:90%">
+                                            <i class="fa-solid fa-square-check fa-lg" style="color: #ffffff;"></i>
+                                            &nbsp;Activate
+                                        </button>
+                                    </a>
+                                <?php
                                 }
                                 ?>
 
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
 
                     <?php
                     }

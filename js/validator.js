@@ -130,6 +130,22 @@ $(document).ready(function () {
         accept: "image/jpeg,image/png,image/gif,image/webp",
         filesize: 2,
       },
+      p_main_updt: {
+        accept: "image/jpeg,image/png,image/gif,image/webp",
+        filesize: 2,
+      },
+      e_main_updt: {
+        accept: "image/jpeg,image/png,image/gif,image/webp",
+        filesize: 2,
+      },
+      "p_extra_updt[]": {
+        accept: "image/jpeg,image/png,image/gif,image/webp",
+        filesize: 2,
+      },
+      "e_extra_updt[]": {
+        accept: "image/jpeg,image/png,image/gif,image/webp",
+        filesize: 2,
+      },
       ed: {
         required: true,
       },
@@ -225,6 +241,22 @@ $(document).ready(function () {
         accept: "only imge file with extension jpg,png and gif are allowed",
         filesize: "File size must not be greater than 2MB",
       },
+      e_main_updt: {
+        accept: "only imge file with extension jpg,png and gif are allowed",
+        filesize: "File size must not be greater than 2MB",
+      },
+      p_main_updt: {
+        accept: "only imge file with extension jpg,png and gif are allowed",
+        filesize: "File size must not be greater than 2MB",
+      },
+      "p_extra_updt[]": {
+        accept: "only imge file with extension jpg,png and gif are allowed",
+        filesize: "File size must not be greater than 2MB",
+      },
+      "e_extra_updt[]": {
+        accept: "only imge file with extension jpg,png and gif are allowed",
+        filesize: "File size must not be greater than 2MB",
+      },
       ed: {
         required: "Event Description cannot be empty",
       },
@@ -286,8 +318,20 @@ $(document).ready(function () {
       if (element.attr("name") == "e_extra[]") {
         $("#e_extra_err").html(error);
       }
-      if (element.attr("name") == "p_extra") {
+      if (element.attr("name") == "p_extra[]") {
         $("#p_extra_err").html(error);
+      }
+      if (element.attr("name") == "e_main_updt") {
+        $("#e_main_err").html(error);
+      }
+      if (element.attr("name") == "p_main_updt") {
+        $("#p_main_err_updt").html(error);
+      }
+      if (element.attr("name") == "e_extra_updt[]") {
+        $("#e_extra_err_updt").html(error);
+      }
+      if (element.attr("name") == "p_extra_updt[]") {
+        $("#p_extra_err_updt").html(error);
       }
       if (element.attr("name") == "ed") {
         $("#ed_err").html(error);

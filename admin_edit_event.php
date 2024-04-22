@@ -74,8 +74,8 @@ while ($row = mysqli_fetch_array($result)) {
                     </div>
                     <div class="form-group">
                         <label for="e_main1">Event Main Image:</label>
-                        <input type="file" class="form-control" id="e_main1" name="e_main">
-                        <span id="e_main_err"></span>
+                        <input type="file" class="form-control" id="e_main1" name="e_main_updt">
+                        <span id="e_main_err_updt"></span>
                     </div>
                     <div class="form-group">
                         <div class="row"><?php
@@ -91,10 +91,10 @@ while ($row = mysqli_fetch_array($result)) {
                     </div>
                     <div class="form-group">
                         <label for="e_extra1">Event Extra Images:</label>
-                        <input type="file" class="form-control" id="e_extra1" placeholder="Enter Event Title" name="e_extra[]" multiple>
-                        <span id="e_extra_err"></span>
+                        <input type="file" class="form-control" id="e_extra1" placeholder="Enter Event Title" name="e_extra_updt[]" multiple>
+                        <span id="e_extra_err_updt"></span>
                     </div>
-                    <div class="form">
+                    <div class="form-group">
                         <label for="status1">Select Status:</label>
                         <select name="status" id="status1" class="form-control">
                             <option value="Active" <?php if ($row[8] == "Active") {

@@ -10,15 +10,15 @@ include_once("guest_header.php");
 
     It is virtuous cycle of “change” that happens only in the beautiful and serene campus of RKU.
 
-    Join us if you want to change your thinking and your perspectives.
+       Join us if you want to change your thinking and your perspectives.
 
     Join us if you want to change the world.
     <br>
     <br>
-    <h1>Mission</h1>
+         <h1>Mission</h1>
     <br>
     To develop a community of students and academicians who are a part of world class education system which is developed in a manner which supports the intellectual, professional and moral growth of the students leading to advancement of human knowledge through enterprising research.
-    <br>
+         <br>
     <br>
     <h1>Vision</h1>
     <br>

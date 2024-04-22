@@ -4,8 +4,8 @@ require_once 'vendor/autoload.php'; // Include the Razorpay library
 
 use Razorpay\Api\Api;
 
-$api_key = '';
-$api_secret = '';
+$api_key = 'rzp_test_iD5aLBBZHZuTq6';
+$api_secret = 'QallnX5ljwZaYK97dSZ5XjSs';
 $total=$_SESSION['total'];
 //$total=$_REQUEST['total'];
 $api = new Api($api_key, $api_secret);
